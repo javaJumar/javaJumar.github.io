@@ -60,6 +60,7 @@ function createEventTemplate(event) {
     return content;
 }
 
+//this will create the markers on google maps
 function createMarker(event, infowindow) {
     const { venue, url, name } = event;
     console.log(name);
