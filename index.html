@@ -1,1 +1,53 @@
-circles
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Events</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Rock+Salt|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <header role='banner'>
+        <h1 class='title'>
+            <img class='logo' src='https://png.icons8.com/windows/1600/adventure.png' alt='map diagram'> Out & About
+            <h1>
+    </header>
+    <main role='main'>
+        <h2 class='tagline'>"Find cool nearby things to do."</h2>
+        <form for='query' class='search-inputs' autocomplete="on">
+            <div class='first-input'>
+                <label for="query">What events interests you?</label>
+                <input id='interest' type="text" class="interest-input" placeholder='  Pick anything!' required>
+            </div>
+            <div class='second-input'>
+                <label for="query">What's your zip-code?</label>
+                <input id='zipCode' type="text" class="zip-input" placeholder='' required>
+            </div>
+            <button id='submit' class="submit-button" type="submit">Search!</button>
+        </form>
+        <div id='api-data'></div>
+        <section id='map' class='hidden-element'>
+        </section>
+        <section id='events' class='hidden-element'>
+            <div id='event-detail'>
+                <a id='home-screen' href='index.html'>Home/Search Again</a>
+                <h3 class='click-event'>Click a marker to view an event!</h3>
+                <h3 class='no-event'>Sorry, no events fit your criteria, please try again!</h3>
+            </div>
+        </section>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChRNikEvhMwmi0fLhnqwz2Wyh9EEBhjdw&callback=initMap">
+    </script>
+    <script type="text/javascript" src="./maps.js"></script>
+    <script src="./moment.js"></script>
+</body>
+
+</html>

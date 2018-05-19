@@ -1,0 +1,473 @@
+*{
+  box-sizing: border-box;
+}
+body {
+        background: linear-gradient(rgba(165, 165, 165, 0.45), rgba(192, 192, 192, 0.45) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; 
+        margin: 0;
+    }
+
+html, body, main {
+    height: 100%;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Rock Salt', cursive; 
+    margin-top: 0;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+}
+
+.tagline{
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: 130px;
+    font-size: 30px;
+}
+.tagline2{
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    margin-top: -40px;
+}
+
+form {
+    text-align: center;
+}
+
+.first-input{
+    display: block;
+}
+
+.second-input{
+    display: block;
+    margin-top: 20px;
+}
+
+label{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+input{
+    border-radius: 10px;
+    font-size: 15px;
+    border: 3px solid black;
+    padding: 5px; 
+    outline: none;
+    margin-top: 5px;
+}
+
+input[type="text"]
+{
+    font-size:20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+input::-webkit-input-placeholder {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+input:-ms-input-placeholder {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+input:-moz-placeholder {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+input::-moz-placeholder {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+  }
+
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+  }
+
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    position: relative;
+    padding: 5px 20px;
+    top: 0;
+    font-size: 30px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: rgb(171, 211, 191);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(216, 136, 125);
+  }
+  
+
+#api-data{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.event-container{
+    margin: 10px:
+}
+
+h3{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Rock Salt', cursive; 
+    margin-top: 50%;
+}
+
+.click-event, .no-event{
+    display: none;
+}
+
+.event-heading{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+    float: left;
+    clear: right;
+}
+
+.event-description{
+    padding: 10px; 
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+    clear: right;
+}
+
+.event-link{
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    float: left;
+    clear: right;
+    color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: rgb(171, 211, 191);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+.event-link:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  .event-link:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(223, 151, 142);
+  }
+
+.event-pic{
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    float: left;
+    clear: both;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.times{
+    font-weight: 600;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    float: left;
+    clear: right;
+}
+
+.no-event{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#events{
+    height: 100%;
+    width: 30%;
+    display: none;
+    padding: 15px;
+    float: left;
+    overflow: auto;
+    color:black;
+    background: linear-gradient(rgba(248, 248, 248, 0.80), rgba(253, 253, 253, 0.80) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+
+#map{
+    height: 100%;
+    width: 70%;
+    display: none;
+    float: right;
+}
+
+.marker-title{
+    font-weight: 900; 
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.marker-link{
+    font-weight: 900; 
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.back-button{
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: rgb(171, 211, 191);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+.back-button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  .back-button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(228, 150, 147);
+  }
+
+ #home-screen{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    clear: both;
+    text-decoration: none;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: rgb(171, 211, 191);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+#home-screen:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  #home-screen:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(228, 150, 147);
+  }
+
+  #back-to-map{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    clear: right;
+    text-decoration: none;
+    background-color: white;
+    padding-left: 10px;p
+    padding-right: 10px;
+    margin-top: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: rgb(171, 211, 191);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+#back-to-map:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  #back-to-map:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(228, 150, 147);
+  }
+  
+
+  .back-button{
+      display: none;
+  }
+
+@media only screen and (max-width : 960px) and (min-width : 320px){
+header{
+        width: 100%;
+    }
+.meetup-data, .maps-data {
+    width: 100%;
+    }
+h1 {
+    width: 100%;
+    font-size: 30px;
+    }   
+h2.tagline {
+    width: 100%;
+    margin-top: 130px; 
+    }   
+.event-container {
+    width: 100%;
+    }
+
+#events, #map{
+    width: 100%;
+    top: 0;
+    right: 0; 
+    position: absolute; 
+    }
+
+}
