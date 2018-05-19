@@ -265,8 +265,8 @@ h3{
 
 .no-event{
     text-align: center;
-    font-size: 40px;
-    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    font-family: 'Rock Salt', cursive;
 }
 
 #events{
@@ -353,6 +353,7 @@ h3{
  #home-screen{
     font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
+    width: 24%;
     clear: both;
     text-decoration: none;
     background-color: white;
@@ -398,12 +399,14 @@ h3{
   #back-to-map{
     font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
+    float: left;
     clear: right;
     text-decoration: none;
     background-color: white;
-    padding-left: 10px;p
+    padding-left: 10px;
     padding-right: 10px;
     margin-top: 15px;
+    padding-right: 5px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
     border: 3px solid black;
