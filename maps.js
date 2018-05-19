@@ -14,15 +14,16 @@ function getEvents(interest, zipCode) {
     }
     // this gets the data from Eventbrite's endpoint
     $.get(options).done(response => {
-        console.log(response);
         const events = response.events;
         const newLat = response.location.latitude;
         const newLng = response.location.longitude;
         centerMap(+newLat, +newLng);
         const infowindow = new google.maps.InfoWindow({ maxWidth: 130 });
+        //there are no returned results, this page will show
         if (events.length === 0) {
             $('#events').show();
             $('.no-event').show();
+            //if there are results, google markers will show where the event will take place
         } else {
             events.map(event => {
                 createMarker(event, infowindow);
@@ -38,9 +39,8 @@ function getEvents(interest, zipCode) {
     })
 }
 
-//this creates the event information in the left container
+//this creates the event information in the events container
 function createEventTemplate(event) {
-    console.log(event);
     const startTime = event.start.local;
     const endTime = event.end.local;
     const newStartTime = moment(startTime).format('LLLL');
@@ -60,13 +60,11 @@ function createEventTemplate(event) {
     return content;
 }
 
-//this will create the markers on google maps
+//this creates the google maps markers using the eventbrite API data 
 function createMarker(event, infowindow) {
     const { venue, url, name } = event;
-    console.log(name);
     const { latitude, longitude } = venue;
     const position = { lat: +latitude, lng: +longitude }
-    console.log(position);
     const template = createEventTemplate(event);
     let marker = new google.maps.Marker({
         position,
@@ -80,16 +78,14 @@ function createMarker(event, infowindow) {
     if (isMobile()) {
         closeEvents();
     }
+    //this is what happens when you click on a marker, and screen size matters 
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
         infowindow.setContent(content);
-        console.log('marker');
         $('#event-detail').html(template);
         if (isMobile()) {
-            console.log('open events');
             openEvents();
             $('#back-to-map').click(function () {
-                console.log('click');
                 closeEvents();
             })
         }
@@ -99,20 +95,23 @@ function createMarker(event, infowindow) {
     });
 }
 
-
+//this function shows the events container, and hides the back to map button
 function openEvents() {
     $('#events').show();
     $('#back-to-map').removeClass('back-button');
 }
 
+//this function hides the events container 
 function closeEvents() {
     $('#events').hide();
 }
 
+//this function dictates what will happen is the resolution is below 960px
 function isMobile() {
     return $(window).width() < 960;
 }
 
+//this populates and centers google maps with the coordinates from eventbrite
 function centerMap(newLat, newLng) {
     var settings = {
         zoom: 11,
@@ -123,6 +122,7 @@ function centerMap(newLat, newLng) {
     map = new google.maps.Map(document.getElementById('map'), settings);
 }
 
+//this populates the initial google maps. This is the default center of the map
 function initMap() {
     //this is the Map options
     var settings = {
@@ -144,6 +144,7 @@ function initMap() {
     });
 }
 
+//this is how the browser will render results 
 function renderResults() {
     $('header').remove();
     $('.tagline').remove();
@@ -154,16 +155,15 @@ function renderResults() {
     }
 }
 
-// //calling Init 
 function main() {
     onSubmit();
     $('#back').click(closeEvents);
 }
 
+//what happens when you click on the search button
 function onSubmit() {
     $('form').submit(event => {
         event.preventDefault();
-        console.log(event);
         const interest = $('#interest').val();
         const zipCode = $('#zipCode').val();
         $('form').find('#interest').val("");
