@@ -25,7 +25,8 @@ html, body, header, main, form, section {
   
   h1{
       text-align: center;
-      font-size: 40px;
+      width: 100%; 
+      font-size: 30px;
       font-weight: 900;
       font-family: 'Rock Salt', cursive; 
       margin-top: 0;
@@ -37,6 +38,7 @@ html, body, header, main, form, section {
   
   .tagline{
       text-align: center;
+      width: 100%;
       font-family: 'Noto Sans', sans-serif;
       margin-top: 130px;
       font-size: 30px;
@@ -167,6 +169,7 @@ html, body, header, main, form, section {
   
   .event-container{
       margin: 10px:
+      width: 100%; 
   }
   
   h3{
@@ -270,14 +273,17 @@ html, body, header, main, form, section {
   }
   
   #events{
+    width: 100%;
+    top: 0;
+    right: 0; 
+    position: absolute; 
       height: 100%;
-      width: 30%;
       display: none;
       padding: 15px;
       float: left;
       overflow: auto;
       color:black;
-      background: linear-gradient(rgba(248, 248, 248, 0.80), rgba(253, 253, 253, 0.80) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
+      background: linear-gradient(rgba(248, 248, 248, 0.83), rgba(253, 253, 253, 0.83) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
       background-position: center center;
       background-repeat: no-repeat;
       -webkit-background-size: cover;
@@ -288,9 +294,20 @@ html, body, header, main, form, section {
   
   #map{
       height: 100%;
-      width: 70%;
+      top: 0;
+      right: 0; 
+      left: 0;
+      bottom: 0;
+      position: absolute;
       display: none;
-      float: right;
+  }
+
+ .back-home{
+      position: fixed; 
+      background-color: white; 
+      height: 100px;
+      margin-top: 0;
+      margin-left: 0;
   }
   
   .marker-title{
@@ -446,29 +463,30 @@ html, body, header, main, form, section {
         display: none;
     }
   
-  @media only screen and (max-width : 960px) and (min-width : 320px){
-  header{
-      width: 100%;
-      }
-  .meetup-data, .maps-data {
-      width: 100%;
-      }
+  @media only screen and (min-width : 960px){
+
   h1 {
-      width: 100%;
-      font-size: 30px;
+      width: initial;
+      font-size: 40px;
       }   
   h2.tagline {
-      width: 100%;
-      margin-top: 130px; 
+      width: initial;
       }   
   .event-container {
-      width: 100%;
+    margin: 10px:
       }
   
-  #events, #map{
-      width: 100%;
+  #events{
+      width: 30%;
       top: 0;
       right: 0; 
-      position: absolute; 
+      position: relative; 
       }
+#map{
+    width: 70%;
+    height: 100%;
+    display: none;
+    position: relative;
+    float: right;
+}
   }
