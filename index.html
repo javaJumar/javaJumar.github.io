@@ -31,12 +31,12 @@
             </div>
             <button id='submit' class="submit-button" type="submit">Search!</button>
         </form>
-        <div id='api-data'></div>
-        <section id='map' class='hidden-element'>
+        <!-- <div id='api-data'></div> -->
+        <section role='region' id='map' class='hidden-element' aria-live="assertive" hidden>
         </section>
-        <section id='events' class='hidden-element'>
+        <section role='region' id='events' class='hidden-element' aria-live='assertive' hidden>
             <div id='event-detail'>
-                <a id='home-screen' href='index.html'>Home/Search Again</a>
+                <a id='home-screen' href='index.html'>Search Again</a>
                 <h3 class='click-event'>Click a marker to view an event!</h3>
                 <h3 class='no-event'>Sorry, no events fit your criteria, please try again!</h3>
             </div>
@@ -51,3 +51,5 @@
 </body>
 
 </html>
+
+<!-- complete -->

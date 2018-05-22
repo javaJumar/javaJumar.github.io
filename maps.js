@@ -5,7 +5,7 @@ let map;
 //get the list of events from Eventbrite API endpoint
 function getEvents(interest, zipCode) {
     const endpoint =
-        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=50mi&expand=organizer,venue`;
+        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=30mi&expand=organizer,venue`;
     const options = {
         url: endpoint,
         headers: {
@@ -48,15 +48,15 @@ function createEventTemplate(event) {
     const eventLink = event.url;
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
-    const content = `<div class='event-container'>
-            <a id='home-screen' href='index.html'>Home/Search Again</a><br>
+    const content = `<section role='region' class='event-container'>
+            <a id='home-screen' href='index.html'>Search Again</a><br>
             <p action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</p><br>
             <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
             <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link</a></p>
-            </div>`;
+            </section>`;
     return content;
 }
 
@@ -71,10 +71,10 @@ function createMarker(event, infowindow) {
         url,
         map
     });
-    const content = `<div class = 'marker-info >
+    const content = `<section role='region' class = 'marker-info >
         <p class='marker-title'>"${name.text}"</p>
         <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a />
-    </div>`
+    </section>`
     if (isMobile()) {
         closeEvents();
     }
@@ -82,7 +82,7 @@ function createMarker(event, infowindow) {
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
         infowindow.setContent(content);
-        $('#event-detail').html(template);
+        $('#event-detail').prop('hidden', false).html(template);
         if (isMobile()) {
             openEvents();
             $('#back-to-map').click(function () {
@@ -114,7 +114,7 @@ function isMobile() {
 //this populates and centers google maps with the coordinates from eventbrite
 function centerMap(newLat, newLng) {
     var settings = {
-        zoom: 11,
+        zoom: 10,
         center: { lat: newLat, lng: newLng },
         gestureHandling: 'greedy',
         mapTypeId: google.maps.MapTypeId.TERRAIN
@@ -131,6 +131,8 @@ function initMap() {
         gestureHandling: 'greedy',
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
+
+    $('#map').prop('hidden', false);
     //renders Map on the browser
     map = new google.maps.Map(document.getElementById('map'), settings);
     let geocoder = new google.maps.Geocoder();
@@ -176,3 +178,5 @@ function onSubmit() {
 }
 
 main();
+
+// complete
