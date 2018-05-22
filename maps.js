@@ -50,7 +50,7 @@ function createEventTemplate(event) {
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
     const content = `<section role='region' class='event-container'>
             <a id='home-screen' href='index.html'>Search Again</a><br>
-            <p action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</p><br>
+            <p id='back-to-map' class='back-button'>Back to Map Results</p><br>
             <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
