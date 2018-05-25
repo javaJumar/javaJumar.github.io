@@ -23,11 +23,13 @@
         <form for='query' class='search-inputs' autocomplete="on">
             <div class='first-input'>
                 <label for="query">What events interests you?</label>
-                <input id='interest' type="text" class="interest-input" placeholder='  Pick anything!' required>
+                <input id='interest' type="text" pattern='^[a-z A-Z]+$' title='Example: Hiking' class="interest-input" placeholder='  Pick anything!'
+                    required>
             </div>
             <div class='second-input'>
                 <label for="query">What's your zip-code?</label>
-                <input id='zipCode' type="text" class="zip-input" placeholder='' required>
+                <input id='zipCode' type="text" pattern='^[0-9]{5}$' title='Example: 90001' class="zip-input" placeholder='  e.g. 10001'
+                    required>
             </div>
             <button id='submit' class="submit-button" type="submit">Search!</button>
         </form>
